@@ -27,19 +27,14 @@ module.exports = {
       },
 
       { 
-        test: /\.ts$/,
-        exclude: /node_modules/,
+        test: /\.js$/,
         use: {
-          loader: 'ts-loader',
-          options: {
-            configFile: 'tsconfig.json'
-          }
+          loader: 'babel-loader'
         }
       },
 
       {
         test: /\.(sa|sc|c)ss$/,
-        // exclude: /node_modules/,
         use: [
           isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
@@ -88,10 +83,6 @@ module.exports = {
         ]
       },
     ]
-  },
-
-  resolve: {
-    extensions: [ '.ts', '.tsx', '.js' ]
   },
 
   optimization: isProd ? {

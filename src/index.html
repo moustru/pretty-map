@@ -10,10 +10,15 @@
 </head>
 <body>
   <h1 class="title">Pretty Map</h1>
-  <div id="map"></div>
+  <div class="wrapper">
+    <div id="map"></div>
+    <div class="markers">
+      <ul></ul>
+    </div>
+  </div>
   <div class="buttons">
-    <button class="btn btn-success">Сформировать полигон</button>
-    <button class="btn btn-danger">Удалить последнюю точку</button>
+    <button class="btn btn-success btn-add-polygon">Сформировать полигон</button>
+    <button class="btn btn-danger btn-del-polygon">Удалить полигон</button>
   </div>
   <script src="js/app.js"></script>
 </body>
