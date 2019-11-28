@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.title {
+  margin: 0;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 72px;
+}
+
+#map {
+  width: 900px;
+  height: 500px;
+  margin: auto;
+  border: 2px solid #000;
+}
+
+.leaflet {
+  &-marker {
+    &-icon {
+      width: auto !important;
+    }
+  }
+}
