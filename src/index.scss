@@ -24,6 +24,38 @@ html, body {
   border: 2px solid #000;
 }
 
+.buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #a5a5a5;
+  color: #fff;
+  border: none;
+  transition: all .3s ease;
+  cursor: pointer;
+
+  &-success {
+    background-color: #106e10;
+
+    &:hover {
+      background-color: lighten(#106e10, 5%)
+    }
+  }
+
+  &-danger {
+    background-color: #a91717;
+
+    &:hover {
+      background-color: lighten(#a91717, 5%)
+    }
+  }
+}
+
 .leaflet {
   &-marker {
     &-icon {
