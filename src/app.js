@@ -26,6 +26,7 @@ L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 map.on('click', e => {
   marker = L.marker([e.latlng.lat, e.latlng.lng]).addTo(map)
   points.push({
+    id: marker._leaflet_id,
     lat: e.latlng.lat,
     lng: e.latlng.lng
   })
@@ -50,8 +51,13 @@ function deletePolygon() {
 }
 
 function deletePoint(e) {
+  let relatedId = e.target.parentNode.getAttribute('id')
+  let relatedPoint = points.find(x => x.id === Number(relatedId))
   let marker = map._layers[e.target.parentNode.getAttribute('id')]
-  deletePolygon()
+
+  if(map.hasLayer(polygon)) deletePolygon()
+  points.splice(points.indexOf(relatedPoint), 1)
+
   map.removeLayer(marker)
   Render.update(map, deletePoint)
 }
