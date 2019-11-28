@@ -1,5 +1,5 @@
-let parentList = document.querySelector('.markers ul')
-let markerListHTML = `<span class="markers-item-title"></span><button class="btn btn-danger btn-remove-marker">Удалить</button>`
+let parentList = document.querySelector('.markers ul');
+let markerListHTML = `<span class="markers-item-title"></span><button class="btn btn-danger btn-remove-marker">Удалить</button>`;
 
 const Render = {
   update(map, action) {

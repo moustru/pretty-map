@@ -67,7 +67,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'images/[name].[ext]'
+              name: 'css/images/[name].[ext]'
             }
           },
 
@@ -85,21 +85,12 @@ module.exports = {
     ]
   },
 
-  optimization: isProd ? {
-    minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-        uglifyOptions: {
-          compress: {
-            inline: false,
-            warnings: false,
-            drop_console: true,
-            unsafe: true
-          },
-        },
-      }),
-    ], 
-  } : {},
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/index.css',
+      chunkFilename: 'css/[id].css'
+    })
+  ],
 
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
